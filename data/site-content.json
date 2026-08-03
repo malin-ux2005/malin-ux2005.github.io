@@ -1,0 +1,28 @@
+{
+  "banners": [
+    {
+      "eyebrow": "01 / SALE&FREE",
+      "title": "Бесплатная доставка",
+      "text": "При покупке вещей на сумму от 10.000₽ в одном заказе - доставка осуществляется за счет магазина!",
+      "action": "Купить",
+      "href": "#catalog",
+      "imageUrl": "/catalog-images/f44dd54b44/FREE_BANNER_01.jpg",
+      "theme": "light",
+      "order": 10
+    }
+  ],
+  "collections": [
+    {
+      "name": "Vivantica Originals",
+      "code": "VO-01",
+      "text": "Личный архив и винтажные вещи Viwantica.",
+      "filter": "Viwantica Originals",
+      "imageUrl": "/catalog-images/132d96a2a3/COL_01.jpg",
+      "theme": "dark",
+      "href": "#catalog",
+      "buttonLabel": "",
+      "order": 10
+    }
+  ],
+  "generatedAt": "2026-08-03T22:15:32.687Z"
+}
