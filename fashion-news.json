@@ -1,7 +1,17 @@
 {
   "source": "The Guardian Fashion",
-  "updatedAt": "2026-08-08T11:28:56.630Z",
+  "updatedAt": "2026-08-08T14:32:00.491Z",
   "items": [
+    {
+      "title": "Going bananas for bandanas: the latest fashion trend that goes back centuries",
+      "link": "https://www.theguardian.com/fashion/2026/aug/08/bandanas-fashion-trend-accessories-goes-back-centuries",
+      "publishedAt": "Sat, 08 Aug 2026 09:00:42 GMT"
+    },
+    {
+      "title": "Can Harvey Nichols find its way back to being Absolutely Fabulous again?",
+      "link": "https://www.theguardian.com/business/2026/aug/08/can-harvey-nichols-find-its-way-back-to-being-absolutely-fabulous-again",
+      "publishedAt": "Sat, 08 Aug 2026 11:00:44 GMT"
+    },
     {
       "title": "Stephen Libby on fashion: so many men have asked me for clothes advice since The Traitors",
       "link": "https://www.theguardian.com/fashion/2026/aug/05/stephen-libby-traitors-fashion-men-style-advice",
@@ -28,21 +38,6 @@
       "publishedAt": "Wed, 05 Aug 2026 06:00:12 GMT"
     },
     {
-      "title": "Jess Cartner-Morley’s August style essentials: lace trims, snazzy knits and one truly beautiful bag",
-      "link": "https://www.theguardian.com/thefilter/2026/aug/01/jess-cartner-morleys-august-style-essentials-2026",
-      "publishedAt": "Sat, 01 Aug 2026 09:00:48 GMT"
-    },
-    {
-      "title": "No apologies, no freebies: the man who makes Andy Burnham’s jackets on how to weather a storm",
-      "link": "https://www.theguardian.com/fashion/2026/aug/01/andy-burnham-jackets-private-white-vc-james-eden",
-      "publishedAt": "Sat, 01 Aug 2026 07:00:46 GMT"
-    },
-    {
-      "title": "Sali Hughes on beauty: the new crop of fig perfumes make perfect scents",
-      "link": "https://www.theguardian.com/fashion/2026/jul/29/sali-hughes-on-beauty-new-fig-perfumes",
-      "publishedAt": "Wed, 29 Jul 2026 09:00:29 GMT"
-    },
-    {
       "title": "Zendaya faces backlash for wearing ancient Iranian jewellery at Odyssey event",
       "link": "https://www.theguardian.com/science/2026/jul/21/zendaya-faces-backlash-for-wearing-ancient-iranian-jewellery-at-odyssey-event",
       "publishedAt": "Tue, 21 Jul 2026 15:01:36 GMT"
@@ -51,6 +46,11 @@
       "title": "Braiding used to be low maintenance and budget-friendly. What happened?",
       "link": "https://www.theguardian.com/news/2026/jul/29/braiding-hair-used-to-be-low-maintenance-and-budget-friendly-what-happened",
       "publishedAt": "Wed, 29 Jul 2026 12:00:32 GMT"
+    },
+    {
+      "title": "From high heels to ‘Zara death pants’: how fashion falls foul of women’s safety",
+      "link": "https://www.theguardian.com/society/2026/jul/24/from-high-heels-to-zara-death-pants-how-fashion-falls-foul-of-womens-safety",
+      "publishedAt": "Fri, 24 Jul 2026 16:01:50 GMT"
     }
   ]
 }
