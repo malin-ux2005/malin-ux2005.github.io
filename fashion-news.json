@@ -1,6 +1,6 @@
 {
   "source": "The Guardian Fashion",
-  "updatedAt": "2026-08-21T08:40:37.555Z",
+  "updatedAt": "2026-08-21T12:48:12.818Z",
   "items": [
     {
       "title": "‘If I’m spending that kind of money, the shoe has to do everything’ – the backlash to the three figure trainer",
@@ -38,6 +38,11 @@
       "publishedAt": "Fri, 14 Aug 2026 14:09:22 GMT"
     },
     {
+      "title": "‘A long hot summer of copy, paste on social media’: why everything is kinda chic now",
+      "link": "https://www.theguardian.com/fashion/2026/aug/14/why-everything-is-kinda-chic-instagram-tiktok-social-media",
+      "publishedAt": "Fri, 14 Aug 2026 06:00:19 GMT"
+    },
+    {
       "title": "Recession nails or racial erasure? Why a ‘naked’ manicure is not as neutral as it seems",
       "link": "https://www.theguardian.com/fashion/2026/aug/09/naked-nail-trend-manicure-debate-recession-racial-erasure",
       "publishedAt": "Sun, 09 Aug 2026 10:00:12 GMT"
@@ -46,11 +51,6 @@
       "title": "Going bananas for bandanas: the latest fashion trend that goes back centuries",
       "link": "https://www.theguardian.com/fashion/2026/aug/08/bandanas-fashion-trend-accessories-goes-back-centuries",
       "publishedAt": "Sat, 08 Aug 2026 09:00:42 GMT"
-    },
-    {
-      "title": "Isaac Mizrahi on stage, style and the legacy of Unzipped: ‘Fashion has no real spine any more’",
-      "link": "https://www.theguardian.com/stage/ng-interactive/2026/aug/11/isaac-mizrahi-fashion-unzipped",
-      "publishedAt": "Tue, 11 Aug 2026 11:00:03 GMT"
     }
   ]
 }
