@@ -1,6 +1,8 @@
 name: Sync and deploy store
 
 on:
+  push:
+    branches: ["main"]
   schedule:
     - cron: "*/30 * * * *"
   workflow_dispatch:
