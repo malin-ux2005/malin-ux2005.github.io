@@ -1,7 +1,7 @@
 {
   "banners": [
     {
-      "eyebrow": "02 / EXCLUSIVE ITEMS",
+      "eyebrow": "01 / EXCLUSIVE ITEMS",
       "title": "Вещи блогеров и артистов",
       "text": "Уже доступны на сайте! В разделе коллекции указаны конкретные личности, чья одежда в данный момент есть в наличии.",
       "action": "Смотреть",
@@ -11,7 +11,7 @@
       "order": 10
     },
     {
-      "eyebrow": "01 / SALE&FREE",
+      "eyebrow": "02 / SALE&FREE",
       "title": "Бесплатная доставка",
       "text": "При покупке вещей на сумму от 10.000₽ в одном заказе - доставка осуществляется за счет магазина!",
       "action": "Купить",
@@ -44,10 +44,10 @@
       "order": 10
     },
     {
-      "name": "Carambaby",
+      "name": "Karrrambaby",
       "code": "CB-01",
       "text": "Селект блогера: характерные формы и редкие находки.",
-      "filter": "Carambaby",
+      "filter": "Karrrambaby",
       "imageUrl": "/catalog-images/132d96a2a3/COL_02.jpg",
       "theme": "dark",
       "href": "#catalog",
@@ -66,5 +66,5 @@
       "order": 30
     }
   ],
-  "generatedAt": "2026-08-22T14:07:55.143Z"
+  "generatedAt": "2026-08-23T00:13:10.562Z"
 }

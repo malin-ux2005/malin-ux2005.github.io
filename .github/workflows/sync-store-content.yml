@@ -1,0 +1,55 @@
+name: Sync and deploy store
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install image tools
+        run: python -m pip install --disable-pip-version-check pillow numpy
+      - name: Read public storefront fields and download changed images
+        run: node scripts/sync-static-content.mjs
+        env:
+          PUBLIC_DIR: .
+          GENERATED_DIR: "false"
+      - name: Build stable Karambaby cutouts
+        run: python scripts/build-karambaby-cutouts.py --public-dir .
+      - name: Refresh fashion headlines
+        run: node scripts/update-fashion-news.mjs fashion-news.json
+      - name: Publish refreshed content
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data catalog-images catalog-cutouts fashion-news.json
+          git diff --cached --quiet || git commit -m "Refresh store content"
+          git push
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - name: Deploy GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
