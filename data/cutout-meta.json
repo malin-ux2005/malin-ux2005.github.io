@@ -1,12 +1,36 @@
 {
   "7e4a6c2131": {
-    "000319_01.png": {
-      "sourceHash": "41ff86d3d548ebfe2094bbfdbc92089edce51280814de32f3387574e6abb1c2b",
-      "path": "/catalog-cutouts/7e4a6c2131/000319_01.png"
+    "000321_01.jpg": {
+      "sourceHash": "34a6e25f7d2a43b6598f4049d2ee759505d7e4c2d94a59185f1aa97327139ccf",
+      "path": "/catalog-cutouts/7e4a6c2131/000321_01.png"
     },
-    "000319_02.png": {
-      "sourceHash": "c234352a2f1c7d7ffffc5f44570a810b1be61292b51567e7722f2d44291893d2",
-      "path": "/catalog-cutouts/7e4a6c2131/000319_02.png"
+    "000321_02.jpg": {
+      "sourceHash": "d1938bcd636026b72d12a9a540d53ee502b81e551cd20d7fb3ff4dee0f606618",
+      "path": "/catalog-cutouts/7e4a6c2131/000321_02.png"
+    },
+    "000333_01.jpg": {
+      "sourceHash": "707e9cfa3c4d90a0e0b4312c73dcb8def67a61be79b1ca39800a82dc15fbb604",
+      "path": "/catalog-cutouts/7e4a6c2131/000333_01.png"
+    },
+    "000333_02.jpg": {
+      "sourceHash": "74cf5b797178e938e6fd7c9343306fd546fb25c5da91091c544a95050538ba48",
+      "path": "/catalog-cutouts/7e4a6c2131/000333_02.png"
+    },
+    "000337_01.jpg": {
+      "sourceHash": "61b404dae14c7b476c2465394015a22cd7ea46325afe19c03a88123f17d31a66",
+      "path": "/catalog-cutouts/7e4a6c2131/000337_01.png"
+    },
+    "000337_02.jpg": {
+      "sourceHash": "4eaf5b6b282d4a79b1f8e7d349ea1ac41fd85faa366c6c010bba354b90ae5556",
+      "path": "/catalog-cutouts/7e4a6c2131/000337_02.png"
+    },
+    "000349_01.jpg": {
+      "sourceHash": "5def21e55257d92eae094a9f7c9d3fa96f5598a4bf5f18f9bee3bd60b01ba5d5",
+      "path": "/catalog-cutouts/7e4a6c2131/000349_01.png"
+    },
+    "000349_02.jpg": {
+      "sourceHash": "8fdfe093b7a3f98f4af5cc55126fc89c0a4b6d4e6a9a8b2c8bf7dcd6b3dd4291",
+      "path": "/catalog-cutouts/7e4a6c2131/000349_02.png"
     }
   }
 }
