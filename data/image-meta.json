@@ -2525,7 +2525,7 @@
       "path": "/catalog-images/7e4a6c2131/000348_02.jpg"
     },
     "000349_01.jpg": {
-      "sourceHash": "5def21e55257d92eae094a9f7c9d3fa96f5598a4bf5f18f9bee3bd60b01ba5d5",
+      "sourceHash": "23bc96ec56b8ad5da355dec6a37bd1bb3535756af8af35e449a0d0fdb0466beb",
       "path": "/catalog-images/7e4a6c2131/000349_01.jpg"
     },
     "000349_02.JPG": {
@@ -3107,6 +3107,10 @@
     "000434_02.jpg": {
       "sourceHash": "d9864a46e65d30e335652b918d2e36f7f4e54649cd78a955eed7beb04768d830",
       "path": "/catalog-images/7e4a6c2131/000434_02.jpg"
+    },
+    "000435_01.jpg": {
+      "sourceHash": "5def21e55257d92eae094a9f7c9d3fa96f5598a4bf5f18f9bee3bd60b01ba5d5",
+      "path": "/catalog-images/7e4a6c2131/000435_01.jpg"
     },
     "000435_02.jpg": {
       "sourceHash": "8fdfe093b7a3f98f4af5cc55126fc89c0a4b6d4e6a9a8b2c8bf7dcd6b3dd4291",
