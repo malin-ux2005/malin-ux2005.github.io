@@ -3,7 +3,7 @@ import { access, mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, join, resolve } from "node:path";
 
 const SHEET_ID = "1C8xVNcmo9b42jLUYL6Bma7KD5FVxYaLWpOO26psYzxM";
-const CATALOG_GID = "500432697";
+const CATALOG_SHEET = "Сайт — Каталог";
 const PUBLIC_DIR = resolve(process.env.PUBLIC_DIR || "public");
 const DATA_DIR = join(PUBLIC_DIR, "data");
 const IMAGE_DIR = join(PUBLIC_DIR, "catalog-images");
@@ -148,12 +148,39 @@ async function runPool(tasks, concurrency = 10) {
   await Promise.all(workers);
 }
 
+function parseCbrCurrency(source, code) {
+  const block = source.match(new RegExp(`<CharCode>${code}<\\/CharCode>[\\s\\S]*?<Nominal>(\\d+)<\\/Nominal>[\\s\\S]*?<Value>([\\d,]+)<\\/Value>`, "i"));
+  if (!block) return null;
+  const nominal = Number(block[1]);
+  const value = Number(block[2].replace(",", "."));
+  return nominal > 0 && value > 0 ? value / nominal : null;
+}
+
+async function fetchCurrencyRates(previous) {
+  try {
+    const response = await fetch("https://www.cbr.ru/scripts/XML_daily.asp", { headers: { Accept: "application/xml,text/xml" } });
+    if (!response.ok) throw new Error(`CBR returned ${response.status}`);
+    const xml = await response.text();
+    const rubPerUsd = parseCbrCurrency(xml, "USD");
+    const rubPerCny = parseCbrCurrency(xml, "CNY");
+    if (!rubPerUsd || !rubPerCny) throw new Error("CBR response has no USD/CNY rates");
+    return { rubPerUsd, rubPerCny, updatedAt: new Date().toISOString(), source: "cbr.ru" };
+  } catch {
+    return previous?.rubPerUsd && previous?.rubPerCny
+      ? previous
+      : { rubPerUsd: 82, rubPerCny: 11.4, updatedAt: new Date().toISOString(), source: "fallback" };
+  }
+}
+
 async function main() {
   await mkdir(DATA_DIR, { recursive: true });
   await mkdir(IMAGE_DIR, { recursive: true });
 
   const [catalog, bannerTable, collectionTable] = await Promise.all([
-    fetchSheet({ gid: CATALOG_GID, range: "A6:AZ2000" }),
+    // Read the unfiltered mirror instead of the editor-facing catalog. Google
+    // Visualization respects an active basic filter, which used to make the
+    // public site lose most products whenever somebody filtered the table.
+    fetchSheet({ sheet: CATALOG_SHEET, range: "A1:AH1000" }),
     fetchSheet({ sheet: "Сайт — Баннеры", range: "A1:K200" }),
     fetchSheet({ sheet: "Сайт — Коллекции", range: "A1:K200" }),
   ]);
@@ -246,6 +273,8 @@ async function main() {
     .sort((a, b) => a.order - b.order);
 
   const generatedAt = new Date().toISOString();
+  const ratesPath = join(DATA_DIR, "currency-rates.json");
+  const currencyRates = await fetchCurrencyRates(await readJson(ratesPath, null));
   const catalogSnapshot = { ...publicCatalogTable(catalog), generatedAt };
   const siteContentSnapshot = { banners, collections, generatedAt };
   const newsSnapshot = await readJson(join(PUBLIC_DIR, "fashion-news.json"), { items: [] });
@@ -254,6 +283,7 @@ async function main() {
     writeJson(join(DATA_DIR, "site-content.json"), siteContentSnapshot),
     writeJson(join(DATA_DIR, "image-manifest.json"), manifest),
     writeJson(metaPath, nextMeta),
+    writeJson(ratesPath, currencyRates),
   ];
   if (GENERATED_DIR) {
     writes.push(
@@ -261,6 +291,7 @@ async function main() {
       writeJson(join(GENERATED_DIR, "site-content.json"), siteContentSnapshot),
       writeJson(join(GENERATED_DIR, "image-manifest.json"), manifest),
       writeJson(join(GENERATED_DIR, "fashion-news.json"), newsSnapshot),
+      writeJson(join(GENERATED_DIR, "currency-rates.json"), currencyRates),
     );
   }
   await Promise.all(writes);
