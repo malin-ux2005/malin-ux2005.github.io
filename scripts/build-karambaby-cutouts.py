@@ -142,6 +142,10 @@ def main() -> None:
     manifest = read_json(data_dir / "image-manifest.json", {})
     image_meta = read_json(data_dir / "image-meta.json", {})
     old_cutout_meta = read_json(data_dir / "cutout-meta.json", {})
+    curated_manifest = read_json(data_dir / "curated-cutouts.json", {"paths": []})
+    curated_paths = {
+        str(path).lstrip("/") for path in curated_manifest.get("paths", []) if str(path).strip()
+    }
     next_cutout_meta = {}
 
     headers = {name: index for index, name in enumerate(catalog.get("headers", []))}
@@ -176,7 +180,16 @@ def main() -> None:
             target = public_dir / target_relative
             source_hash = folder_meta.get(original_name, {}).get("sourceHash", "")
             old = old_cutout_meta.get(folder, {}).get(original_name, {})
-            if target.exists() and source_hash and old.get("sourceHash") == source_hash:
+            target_key = target_relative.as_posix()
+            is_curated = target_key in curated_paths or old.get("curated") is True
+            if is_curated and not target.exists():
+                raise FileNotFoundError(f"Curated Karambaby cutout is missing: {target_key}")
+            if target.exists() and is_curated:
+                # Hand-approved transparent assets are the source of truth.  A
+                # later photo refresh must never replace them with an automatic
+                # background extraction.
+                reused += 1
+            elif target.exists() and source_hash and old.get("sourceHash") == source_hash:
                 reused += 1
             else:
                 make_cutout(source, target)
@@ -186,6 +199,7 @@ def main() -> None:
             next_cutout_meta[folder][original_name] = {
                 "sourceHash": source_hash,
                 "path": cutout_url,
+                "curated": is_curated,
             }
 
     write_json(data_dir / "image-manifest.json", manifest)

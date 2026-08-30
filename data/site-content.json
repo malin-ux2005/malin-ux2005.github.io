@@ -14,9 +14,9 @@
       "order": 10
     },
     {
-      "eyebrow": "02 / SALE&FREE",
-      "title": "Бесплатная доставка",
-      "text": "При покупке вещей на сумму от 10.000₽ в одном заказе - доставка осуществляется за счет магазина!",
+      "eyebrow": "02 / DELIVERY",
+      "title": "Доставка СДЭК",
+      "text": "Стоимость доставки рассчитывается отдельно и оплачивается покупателем при получении.",
       "action": "Купить",
       "href": "#catalog",
       "imageUrl": "/catalog-images/f44dd54b44/FREE_BANNER_01.jpg",
@@ -28,7 +28,7 @@
     },
     {
       "eyebrow": "03 / CERAMICS",
-      "title": "Viwantica Сeramics",
+      "title": "Viwantica Ceramics",
       "text": "Керамические изделия из фонда \"Гаорди\". Изготавливаются вручную участниками фонда.",
       "action": "Смотреть",
       "href": "#catalog",
@@ -64,10 +64,10 @@
       "order": 20
     },
     {
-      "name": "Viwantica Сeramics",
+      "name": "Viwantica Ceramics",
       "code": "VC-01",
       "text": "Индивидуальные изделия ручной работы.",
-      "filter": "Viwantica Сeramics",
+      "filter": "Viwantica Ceramics",
       "imageUrl": "/catalog-images/132d96a2a3/COL_03.jpg",
       "theme": "dark",
       "href": "#catalog",
@@ -75,5 +75,5 @@
       "order": 30
     }
   ],
-  "generatedAt": "2026-08-30T19:29:53.498Z"
+  "generatedAt": "2026-08-30T19:51:54.734Z"
 }

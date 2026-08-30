@@ -67,6 +67,33 @@ function rowReader(table) {
   }));
 }
 
+function dedupeCatalogTable(table) {
+  const columns = new Map(table.headers.map((header, index) => [header.trim(), index]));
+  const cell = (row, name) => row[columns.get(name) ?? -1]?.trim() || "";
+  const selected = new Map();
+
+  table.rows.forEach((row, index) => {
+    const id = cell(row, "ID вещи");
+    if (!id) return;
+    const key = id.normalize("NFKC").replace(/\s+/g, "").toUpperCase();
+    const score = row.reduce((total, value) => total + (value?.trim() ? 1 : 0), 0)
+      + (cell(row, "Название для сайта") ? 1000 : 0)
+      + (cell(row, "Главное фото — имя файла") ? 250 : 0)
+      + (cell(row, "Папка фото — Я.Диск") ? 150 : 0)
+      + (cell(row, "Префикс фото") ? 100 : 0)
+      + (cell(row, "Статус вещи") ? 50 : 0)
+      + (cell(row, "Показывать на сайте") ? 50 : 0)
+      + (cell(row, "Цена, ₽") ? 50 : 0);
+    const current = selected.get(key);
+    if (!current || score > current.score) selected.set(key, { row, score, index: current?.index ?? index });
+  });
+
+  return {
+    headers: table.headers,
+    rows: [...selected.values()].sort((a, b) => a.index - b.index).map(({ row }) => row),
+  };
+}
+
 function publicCatalogTable(table) {
   // Only explicitly approved storefront fields enter the public build. Internal
   // sales, purchasing, profit and manager columns stay private even if columns
@@ -185,6 +212,7 @@ async function main() {
     fetchSheet({ sheet: "Сайт — Баннеры — Моб", range: "A1:E200" }),
     fetchSheet({ sheet: "Сайт — Коллекции", range: "A1:K200" }),
   ]);
+  const uniqueCatalog = dedupeCatalogTable(catalog);
 
   const wanted = new Map();
   const remember = (publicKey, matcher) => {
@@ -194,7 +222,7 @@ async function main() {
     wanted.set(publicKey, list);
   };
 
-  for (const { cell } of rowReader(catalog)) {
+  for (const { cell } of rowReader(uniqueCatalog)) {
     const folder = cell("Папка фото — Я.Диск");
     const prefix = cell("Префикс фото");
     const mainPhoto = cell("Главное фото — имя файла");
@@ -290,7 +318,7 @@ async function main() {
   const generatedAt = new Date().toISOString();
   const ratesPath = join(DATA_DIR, "currency-rates.json");
   const currencyRates = await fetchCurrencyRates(await readJson(ratesPath, null));
-  const catalogSnapshot = { ...publicCatalogTable(catalog), generatedAt };
+  const catalogSnapshot = { ...publicCatalogTable(uniqueCatalog), generatedAt };
   const siteContentSnapshot = { banners, collections, generatedAt };
   const newsSnapshot = await readJson(join(PUBLIC_DIR, "fashion-news.json"), { items: [] });
   const writes = [
@@ -311,7 +339,7 @@ async function main() {
   }
   await Promise.all(writes);
 
-  console.log(`Synced ${catalog.rows.length} catalog rows, ${Object.values(manifest).reduce((sum, files) => sum + Object.keys(files).length, 0)} images, ${downloadTasks.length} downloads.`);
+  console.log(`Synced ${uniqueCatalog.rows.length} unique catalog rows (${catalog.rows.length} source rows), ${Object.values(manifest).reduce((sum, files) => sum + Object.keys(files).length, 0)} images, ${downloadTasks.length} downloads.`);
 }
 
 main().catch((error) => {
