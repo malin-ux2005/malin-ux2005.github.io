@@ -7,7 +7,7 @@
       "action": "Смотреть",
       "href": "#collections",
       "imageUrl": "/catalog-images/f44dd54b44/FREE_BANNER_02.jpg",
-      "mobileImageUrl": "/catalog-images/f44dd54b44/FREE_BANNER_02.jpg",
+      "mobileImageUrl": "",
       "imagePosition": "50% 50%",
       "mobileImagePosition": "50% 42%",
       "theme": "light",
@@ -20,7 +20,7 @@
       "action": "Купить",
       "href": "#catalog",
       "imageUrl": "/catalog-images/f44dd54b44/FREE_BANNER_01.jpg",
-      "mobileImageUrl": "/catalog-images/f44dd54b44/FREE_BANNER_01.jpg",
+      "mobileImageUrl": "",
       "imagePosition": "50% 50%",
       "mobileImagePosition": "50% 42%",
       "theme": "light",
@@ -33,7 +33,7 @@
       "action": "Смотреть",
       "href": "#catalog",
       "imageUrl": "/catalog-images/f44dd54b44/FREE_BANNER_03.jpg",
-      "mobileImageUrl": "/catalog-images/f44dd54b44/FREE_BANNER_03.jpg",
+      "mobileImageUrl": "",
       "imagePosition": "50% 50%",
       "mobileImagePosition": "50% 42%",
       "theme": "light",
@@ -53,10 +53,10 @@
       "order": 10
     },
     {
-      "name": "Karrrambaby",
+      "name": "Carambaby",
       "code": "CB-01",
       "text": "Селект блогера: характерные формы и редкие находки.",
-      "filter": "Karrrambaby",
+      "filter": "Carambaby",
       "imageUrl": "/catalog-images/132d96a2a3/COL_02.jpg",
       "theme": "dark",
       "href": "#catalog",
@@ -75,5 +75,5 @@
       "order": 30
     }
   ],
-  "generatedAt": "2026-08-30T16:47:13.932Z"
+  "generatedAt": "2026-08-30T19:29:53.498Z"
 }
