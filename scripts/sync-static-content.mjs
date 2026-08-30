@@ -176,12 +176,13 @@ async function main() {
   await mkdir(DATA_DIR, { recursive: true });
   await mkdir(IMAGE_DIR, { recursive: true });
 
-  const [catalog, bannerTable, collectionTable] = await Promise.all([
+  const [catalog, bannerTable, mobileBannerTable, collectionTable] = await Promise.all([
     // Read the unfiltered mirror instead of the editor-facing catalog. Google
     // Visualization respects an active basic filter, which used to make the
     // public site lose most products whenever somebody filtered the table.
     fetchSheet({ sheet: CATALOG_SHEET, range: "A1:AH1000" }),
-    fetchSheet({ sheet: "Сайт — Баннеры", range: "A1:K200" }),
+    fetchSheet({ sheet: "Сайт — Баннеры — ПК", range: "A1:K200" }),
+    fetchSheet({ sheet: "Сайт — Баннеры — Моб", range: "A1:E200" }),
     fetchSheet({ sheet: "Сайт — Коллекции", range: "A1:K200" }),
   ]);
 
@@ -200,7 +201,7 @@ async function main() {
     if (prefix) remember(folder, (name) => name.startsWith(`${prefix}_`));
     else if (mainPhoto) remember(folder, (name) => name === mainPhoto);
   }
-  for (const table of [bannerTable, collectionTable]) {
+  for (const table of [bannerTable, mobileBannerTable, collectionTable]) {
     for (const { cell } of rowReader(table)) {
       const folder = cell("Фото — URL / папка Я.Диск");
       const fileName = cell("Имя файла (если Я.Диск)");
@@ -243,18 +244,32 @@ async function main() {
     if (PUBLIC_DISK_URL.test(source)) return manifest[folderHash(source)]?.[fileName] || "";
     return source;
   };
+  const mobileBanners = new Map(rowReader(mobileBannerTable)
+    .filter(({ cell }) => cell("Активен").toLowerCase() === "да" && cell("Порядок"))
+    .map(({ cell }) => [Number(cell("Порядок")), {
+      imageUrl: localImage(cell("Фото — URL / папка Я.Диск"), cell("Имя файла (если Я.Диск)")),
+      imagePosition: cell("Фокус картинки") || "50% 42%",
+    }]));
+
   const banners = rowReader(bannerTable)
     .filter(({ cell }) => cell("Активен").toLowerCase() === "да" && cell("Заголовок"))
-    .map(({ cell }) => ({
-      eyebrow: cell("Маркер"),
-      title: cell("Заголовок"),
-      text: cell("Текст"),
-      action: cell("Текст кнопки") || "Подробнее",
-      href: cell("Ссылка") || "#catalog",
-      imageUrl: localImage(cell("Фото — URL / папка Я.Диск"), cell("Имя файла (если Я.Диск)")),
-      theme: contentTheme(cell("Тема")),
-      order: Number(cell("Порядок")) || 9999,
-    }))
+    .map(({ cell }) => {
+      const order = Number(cell("Порядок")) || 9999;
+      const mobile = mobileBanners.get(order);
+      return {
+        eyebrow: cell("Маркер"),
+        title: cell("Заголовок"),
+        text: cell("Текст"),
+        action: cell("Текст кнопки") || "Подробнее",
+        href: cell("Ссылка") || "#catalog",
+        imageUrl: localImage(cell("Фото — URL / папка Я.Диск"), cell("Имя файла (если Я.Диск)")),
+        mobileImageUrl: mobile?.imageUrl || "",
+        imagePosition: cell("Фокус картинки") || "50% 50%",
+        mobileImagePosition: mobile?.imagePosition || "50% 42%",
+        theme: contentTheme(cell("Тема")),
+        order,
+      };
+    })
     .sort((a, b) => a.order - b.order);
 
   const collections = rowReader(collectionTable)

@@ -7,6 +7,9 @@
       "action": "Смотреть",
       "href": "#collections",
       "imageUrl": "/catalog-images/f44dd54b44/FREE_BANNER_02.jpg",
+      "mobileImageUrl": "/catalog-images/f44dd54b44/FREE_BANNER_02.jpg",
+      "imagePosition": "50% 50%",
+      "mobileImagePosition": "50% 42%",
       "theme": "light",
       "order": 10
     },
@@ -17,6 +20,9 @@
       "action": "Купить",
       "href": "#catalog",
       "imageUrl": "/catalog-images/f44dd54b44/FREE_BANNER_01.jpg",
+      "mobileImageUrl": "/catalog-images/f44dd54b44/FREE_BANNER_01.jpg",
+      "imagePosition": "50% 50%",
+      "mobileImagePosition": "50% 42%",
       "theme": "light",
       "order": 20
     },
@@ -27,6 +33,9 @@
       "action": "Смотреть",
       "href": "#catalog",
       "imageUrl": "/catalog-images/f44dd54b44/FREE_BANNER_03.jpg",
+      "mobileImageUrl": "/catalog-images/f44dd54b44/FREE_BANNER_03.jpg",
+      "imagePosition": "50% 50%",
+      "mobileImagePosition": "50% 42%",
       "theme": "light",
       "order": 30
     }
@@ -66,5 +75,5 @@
       "order": 30
     }
   ],
-  "generatedAt": "2026-08-30T12:18:14.343Z"
+  "generatedAt": "2026-08-30T13:41:05.440Z"
 }
