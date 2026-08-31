@@ -47,10 +47,10 @@
       "order": 10
     },
     {
-      "name": "Carambaby",
+      "name": "Karrrambaby",
       "code": "CB-01",
       "text": "Селект блогера: характерные формы и редкие находки.",
-      "filter": "Carambaby",
+      "filter": "Karrrambaby",
       "imageUrl": "/catalog-images/132d96a2a3/COL_02.jpg",
       "theme": "dark",
       "href": "#catalog",
@@ -67,7 +67,29 @@
       "href": "#catalog",
       "buttonLabel": "",
       "order": 30
+    },
+    {
+      "name": "Pushkina_jul",
+      "code": "PJ-01",
+      "text": "Селект блогера: характерные формы и редкие находки.",
+      "filter": "Pushkina_jul",
+      "imageUrl": "",
+      "theme": "dark",
+      "href": "#catalog",
+      "buttonLabel": "",
+      "order": 40
+    },
+    {
+      "name": "Kasperss",
+      "code": "KS-01",
+      "text": "Селект блогера: характерные формы и редкие находки.",
+      "filter": "Kasperss",
+      "imageUrl": "",
+      "theme": "dark",
+      "href": "#catalog",
+      "buttonLabel": "",
+      "order": 50
     }
   ],
-  "generatedAt": "2026-08-31T18:19:07.136Z"
+  "generatedAt": "2026-08-31T22:55:57.112Z"
 }
