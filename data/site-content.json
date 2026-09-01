@@ -71,9 +71,9 @@
     {
       "name": "Pushkina_jul",
       "code": "PJ-01",
-      "text": "Селект блогера: характерные формы и редкие находки.",
+      "text": "Индивидуальный стиль и отборные образцы.",
       "filter": "Pushkina_jul",
-      "imageUrl": "",
+      "imageUrl": "/catalog-images/132d96a2a3/COL_04.jpg",
       "theme": "dark",
       "href": "#catalog",
       "buttonLabel": "",
@@ -82,14 +82,14 @@
     {
       "name": "Kasperss",
       "code": "KS-01",
-      "text": "Селект блогера: характерные формы и редкие находки.",
+      "text": "Собственная коллекция, которая собиралась не один год.",
       "filter": "Kasperss",
-      "imageUrl": "",
+      "imageUrl": "/catalog-images/132d96a2a3/COL_05.jpg",
       "theme": "dark",
       "href": "#catalog",
       "buttonLabel": "",
       "order": 50
     }
   ],
-  "generatedAt": "2026-08-31T22:55:57.112Z"
+  "generatedAt": "2026-09-01T01:35:26.257Z"
 }
