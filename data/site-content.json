@@ -6,7 +6,7 @@
       "text": "Уже доступны на сайте! В разделе коллекции указаны конкретные личности, чья одежда в данный момент есть в наличии.",
       "action": "Смотреть",
       "href": "#collections",
-      "imageUrl": "/catalog-images/f44dd54b44/FREE_BANNER_02.jpg",
+      "imageUrl": "/catalog-images/f44dd54b44/FREE_BANNER_02.png",
       "imagePosition": "50% 50%",
       "theme": "light",
       "order": 10
@@ -17,7 +17,7 @@
       "text": "Стоимость доставки рассчитывается отдельно и оплачивается покупателем при получении.",
       "action": "Купить",
       "href": "#catalog",
-      "imageUrl": "/catalog-images/f44dd54b44/FREE_BANNER_01.jpg",
+      "imageUrl": "/catalog-images/f44dd54b44/FREE_BANNER_01.png",
       "imagePosition": "50% 50%",
       "theme": "light",
       "order": 20
@@ -28,7 +28,7 @@
       "text": "Керамические изделия из фонда \"Гаорди\". Изготавливаются вручную участниками фонда.",
       "action": "Смотреть",
       "href": "#catalog",
-      "imageUrl": "/catalog-images/f44dd54b44/FREE_BANNER_03.jpg",
+      "imageUrl": "/catalog-images/f44dd54b44/FREE_BANNER_03.png",
       "imagePosition": "50% 50%",
       "theme": "light",
       "order": 30
@@ -40,7 +40,7 @@
       "code": "VO-01",
       "text": "Личный архив и винтажные вещи Viwantica.",
       "filter": "Viwantica Originals",
-      "imageUrl": "/catalog-images/132d96a2a3/COL_01.jpg",
+      "imageUrl": "/catalog-images/132d96a2a3/COL_01.png",
       "theme": "dark",
       "href": "#catalog",
       "buttonLabel": "",
@@ -51,7 +51,7 @@
       "code": "CB-01",
       "text": "Селект блогера: характерные формы и редкие находки.",
       "filter": "Karrrambaby",
-      "imageUrl": "/catalog-images/132d96a2a3/COL_02.jpg",
+      "imageUrl": "/catalog-images/132d96a2a3/COL_02.png",
       "theme": "dark",
       "href": "#catalog",
       "buttonLabel": "",
@@ -62,7 +62,7 @@
       "code": "VC-01",
       "text": "Индивидуальные изделия ручной работы.",
       "filter": "Viwantica Ceramics",
-      "imageUrl": "/catalog-images/132d96a2a3/COL_03.jpg",
+      "imageUrl": "/catalog-images/132d96a2a3/COL_03.png",
       "theme": "dark",
       "href": "#catalog",
       "buttonLabel": "",
@@ -73,7 +73,7 @@
       "code": "PJ-01",
       "text": "Индивидуальный стиль и отборные образцы.",
       "filter": "Pushkina_jul",
-      "imageUrl": "/catalog-images/132d96a2a3/COL_04.jpg",
+      "imageUrl": "/catalog-images/132d96a2a3/COL_04.png",
       "theme": "dark",
       "href": "#catalog",
       "buttonLabel": "",
@@ -84,12 +84,12 @@
       "code": "KS-01",
       "text": "Собственная коллекция, которая собиралась не один год.",
       "filter": "Kasperss",
-      "imageUrl": "/catalog-images/132d96a2a3/COL_05.jpg",
+      "imageUrl": "/catalog-images/132d96a2a3/COL_05.png",
       "theme": "dark",
       "href": "#catalog",
       "buttonLabel": "",
       "order": 50
     }
   ],
-  "generatedAt": "2026-09-01T06:45:02.986Z"
+  "generatedAt": "2026-09-01T08:07:14.114Z"
 }

@@ -136,8 +136,17 @@ function folderHash(publicKey) {
 }
 
 function safeImageName(name) {
+  const extension = name.match(/\.(avif|gif|jpe?g|png|webp)$/i)?.[1]?.toLowerCase() || "jpg";
   const stem = name.replace(/\.[^.]+$/, "").replace(/[^\p{L}\p{N}_.-]+/gu, "_").slice(0, 120);
-  return `${stem || createHash("sha1").update(name).digest("hex").slice(0, 16)}.jpg`;
+  return `${stem || createHash("sha1").update(name).digest("hex").slice(0, 16)}.${extension}`;
+}
+
+function isEnabled(value) {
+  return !/^(?:нет|no|false|0)$/i.test(value.trim());
+}
+
+function canonicalCollection(value) {
+  return /(?:kar+am|car+am|карам)/i.test(value) ? "Karrrambaby" : value;
 }
 
 async function listYandexFolder(publicKey) {
@@ -239,18 +248,38 @@ async function main() {
 
   const metaPath = join(DATA_DIR, "image-meta.json");
   const oldMeta = await readJson(metaPath, {});
+  const oldManifest = await readJson(join(DATA_DIR, "image-manifest.json"), {});
+  const curatedManifest = await readJson(join(DATA_DIR, "curated-cutouts.json"), { paths: [] });
+  const curatedPaths = new Set((curatedManifest.paths || []).map((path) => String(path).replace(/^\/+/, "")));
   const nextMeta = {};
   const manifest = {};
   const downloadTasks = [];
 
   for (const [publicKey, matchers] of wanted) {
-    const items = (await listYandexFolder(publicKey)).filter((item) => matchers.some((matches) => matches(item.name)));
     const hash = folderHash(publicKey);
     const oldFolderMeta = oldMeta[hash] || oldMeta[publicKey] || {};
+    let items;
+    try {
+      items = (await listYandexFolder(publicKey)).filter((item) => matchers.some((matches) => matches(item.name)));
+    } catch (error) {
+      manifest[hash] = oldManifest[hash] || oldManifest[publicKey] || {};
+      nextMeta[hash] = oldFolderMeta;
+      console.warn(`Keeping cached images for ${hash}: ${error instanceof Error ? error.message : "Yandex Disk error"}`);
+      continue;
+    }
     manifest[hash] = {};
     nextMeta[hash] = {};
     for (const item of items) {
       const fileName = safeImageName(item.name);
+      const curatedRelative = `catalog-cutouts/${hash}/${fileName.replace(/\.[^.]+$/, "")}.png`;
+      const curatedOutput = join(PUBLIC_DIR, curatedRelative);
+      if (curatedPaths.has(curatedRelative) && await exists(curatedOutput)) {
+        const relativePath = `/${curatedRelative}`;
+        const sourceHash = item.sha256 || item.md5 || item.file || item.preview;
+        manifest[hash][item.name] = relativePath;
+        nextMeta[hash][item.name] = { sourceHash, path: relativePath, curated: true };
+        continue;
+      }
       const relativePath = `/catalog-images/${hash}/${fileName}`;
       const outputPath = join(IMAGE_DIR, hash, fileName);
       const sourceHash = item.sha256 || item.md5 || item.file || item.preview;
@@ -273,7 +302,7 @@ async function main() {
     return source;
   };
   const banners = rowReader(bannerTable)
-    .filter(({ cell }) => cell("Активен").toLowerCase() === "да" && cell("Заголовок"))
+    .filter(({ cell }) => isEnabled(cell("Активен")) && cell("Заголовок"))
     .map(({ cell }) => {
       const order = Number(cell("Порядок")) || 9999;
       return {
@@ -291,12 +320,12 @@ async function main() {
     .sort((a, b) => a.order - b.order);
 
   const collections = rowReader(collectionTable)
-    .filter(({ cell }) => cell("Активна").toLowerCase() === "да" && cell("Название"))
+    .filter(({ cell }) => isEnabled(cell("Активна")) && cell("Название"))
     .map(({ cell }) => ({
-      name: cell("Название"),
+      name: canonicalCollection(cell("Название")),
       code: cell("Код"),
       text: cell("Описание"),
-      filter: cell("Линейка в товарах") || cell("Название"),
+      filter: canonicalCollection(cell("Линейка в товарах") || cell("Название")),
       imageUrl: localImage(cell("Фото — URL / папка Я.Диск"), cell("Имя файла (если Я.Диск)")),
       theme: contentTheme(cell("Тема")),
       href: cell("Ссылка"),

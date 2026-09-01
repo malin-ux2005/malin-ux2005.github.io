@@ -37,7 +37,7 @@ def collection_key(value: str) -> str:
 
 def is_karambaby(value: str) -> bool:
     key = collection_key(value)
-    return any(token in key for token in ("carambaby", "karambaby", "karrambaby", "карамбейби"))
+    return "карамбейби" in key or re.search(r"(?:k|c)ar+ambaby", key) is not None
 
 
 def connected_components(mask: np.ndarray) -> list[list[tuple[int, int]]]:
