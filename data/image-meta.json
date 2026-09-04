@@ -3358,9 +3358,13 @@
       "sourceHash": "80523f97d4ea8facaeebae8bc874346c5d89406cf2da36ec71a56bd8d8831958",
       "path": "/catalog-images/7e4a6c2131/000383_01.jpg"
     },
-    "000384_02.jpg": {
+    "000383_02.jpg": {
       "sourceHash": "dafe278f92dd78d1164236f7dd9bd770d6a379a4c11faf125e952a24440c66aa",
-      "path": "/catalog-images/7e4a6c2131/000384_02.jpg"
+      "path": "/catalog-images/7e4a6c2131/000383_02.jpg"
+    },
+    "000384_01.JPG": {
+      "sourceHash": "5a577410b4af7bf5da6c0ef25801cdf9a2ffedb963ae2f2fe9ea0fa81acd86fe",
+      "path": "/catalog-images/7e4a6c2131/000384_01.jpg"
     },
     "000385_01.jpg": {
       "sourceHash": "4d2635b88feb54b1511f0f065963d3d36680d3d6e19877260d5d73d2899e9577",
@@ -4063,20 +4067,16 @@
       "path": "/catalog-images/7e4a6c2131/000492_02.jpg"
     },
     "000493_01.JPG": {
-      "sourceHash": "5a577410b4af7bf5da6c0ef25801cdf9a2ffedb963ae2f2fe9ea0fa81acd86fe",
+      "sourceHash": "6006d519f1f09f809731445f0f8b1d5741066f0f09938b389f2188763fa038d0",
       "path": "/catalog-images/7e4a6c2131/000493_01.jpg"
     },
-    "000494_01.JPG": {
-      "sourceHash": "6006d519f1f09f809731445f0f8b1d5741066f0f09938b389f2188763fa038d0",
-      "path": "/catalog-images/7e4a6c2131/000494_01.jpg"
-    },
-    "000494_02.JPG": {
+    "000493_02.JPG": {
       "sourceHash": "be4d292f819999f5e9d6d640850d6c406d4868136f50cd9e39ad60409fb02ba1",
-      "path": "/catalog-images/7e4a6c2131/000494_02.jpg"
+      "path": "/catalog-images/7e4a6c2131/000493_02.jpg"
     },
-    "000494_03.JPG": {
+    "000493_03.JPG": {
       "sourceHash": "4f885e8a74be615f668a5bac5addf3f9f8fd55cd99b0d541a2a931bb66fe1489",
-      "path": "/catalog-images/7e4a6c2131/000494_03.jpg"
+      "path": "/catalog-images/7e4a6c2131/000493_03.jpg"
     }
   },
   "f44dd54b44": {
