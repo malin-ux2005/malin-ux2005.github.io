@@ -1,7 +1,12 @@
 {
   "source": "The Guardian Fashion",
-  "updatedAt": "2026-09-11T17:19:00.747Z",
+  "updatedAt": "2026-09-12T12:23:59.474Z",
   "items": [
+    {
+      "title": "‘She changed the beauty industry’: how Charlotte Mensah brought black hair into the spotlight",
+      "link": "https://www.theguardian.com/fashion/2026/sep/11/charlotte-mensah-exhibition-beauty-industry-black-hair",
+      "publishedAt": "Fri, 11 Sep 2026 10:19:44 GMT"
+    },
     {
       "title": "It’s a slam dunk for Tommy Hilfiger as stars turn out for Plaza homecoming",
       "link": "https://www.theguardian.com/fashion/2026/sep/11/slam-dunk-tommy-hilfiger-plaza-homecoming-fashion-new-york",
@@ -11,11 +16,6 @@
       "title": "Mossy catwalks, mycelial designs and Monty Don: the growth of gardener style",
       "link": "https://www.theguardian.com/fashion/2026/sep/11/gardening-fashion-cool-monty-don",
       "publishedAt": "Fri, 11 Sep 2026 14:07:19 GMT"
-    },
-    {
-      "title": "‘She changed the beauty industry’: how Charlotte Mensah brought black hair into the spotlight",
-      "link": "https://www.theguardian.com/fashion/2026/sep/11/charlotte-mensah-exhibition-beauty-industry-black-hair",
-      "publishedAt": "Fri, 11 Sep 2026 10:19:44 GMT"
     },
     {
       "title": "Ralph Lauren proves the American dream still sells at New York fashion week",
