@@ -1,6 +1,6 @@
 {
   "source": "The Guardian Fashion",
-  "updatedAt": "2026-09-13T18:07:02.722Z",
+  "updatedAt": "2026-09-14T10:44:40.283Z",
   "items": [
     {
       "title": "‘I love the boldness of modernism’: New York fashion week goes highbrow",
@@ -38,6 +38,11 @@
       "publishedAt": "Thu, 10 Sep 2026 17:00:41 GMT"
     },
     {
+      "title": "Why the Met’s John Galliano reversal shocked the fashion world: ‘There hadn’t been this much excitement since camp’",
+      "link": "https://www.theguardian.com/fashion/2026/sep/06/john-galliano-anna-wintour-met-gala",
+      "publishedAt": "Sun, 06 Sep 2026 13:30:06 GMT"
+    },
+    {
       "title": "Kardashian curves: M&S launches £28 bodysuit with exaggerated hip padding",
       "link": "https://www.theguardian.com/fashion/2026/sep/05/kardashian-curves-ms-launches-28-bodysuit-with-exaggerated-hip-padding",
       "publishedAt": "Sat, 05 Sep 2026 11:00:36 GMT"
@@ -46,11 +51,6 @@
       "title": "Wide-legged trousers for men are having a moment. Just ask Gary Neville",
       "link": "https://www.theguardian.com/fashion/2026/sep/04/wide-legged-trousers-men-fashion-moment-gary-neville",
       "publishedAt": "Fri, 04 Sep 2026 14:00:09 GMT"
-    },
-    {
-      "title": "Infallible style: Pope Leo appears in Vanity Fair’s ranks of most fashionable",
-      "link": "https://www.theguardian.com/fashion/2026/aug/28/pope-leo-vanity-fair-most-fashionable-list",
-      "publishedAt": "Fri, 28 Aug 2026 16:44:53 GMT"
     }
   ]
 }
