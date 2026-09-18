@@ -1,7 +1,12 @@
 {
   "source": "The Guardian Fashion",
-  "updatedAt": "2026-09-18T09:52:29.935Z",
+  "updatedAt": "2026-09-18T17:09:29.896Z",
   "items": [
+    {
+      "title": "Marks and Spencer’s first LFW catwalk gamble pays off with compelling looks at affordable prices",
+      "link": "https://www.theguardian.com/business/2026/sep/18/marks-and-spencer-london-fashion-week-catwalk-show",
+      "publishedAt": "Fri, 18 Sep 2026 15:36:36 GMT"
+    },
     {
       "title": "Why did a high-profile fashion CEO physically restrain Peta protesters at New York fashion week?",
       "link": "https://www.theguardian.com/fashion/2026/sep/17/peta-new-york-fashion-week-steven-kolb",
@@ -11,6 +16,11 @@
       "title": "Rain check: what to wear with an anorak",
       "link": "https://www.theguardian.com/fashion/gallery/2026/sep/18/what-to-wear-with-an-anorak",
       "publishedAt": "Fri, 18 Sep 2026 05:00:09 GMT"
+    },
+    {
+      "title": "The definitive guide to men’s shirts: 19 of the best for every occasion",
+      "link": "https://www.theguardian.com/thefilter/2026/sep/18/best-mens-shirts-uk",
+      "publishedAt": "Fri, 18 Sep 2026 14:00:19 GMT"
     },
     {
       "title": "Is the tie dead? Fashion connoisseurs hope not as House of Lords relaxes rules",
@@ -28,29 +38,19 @@
       "publishedAt": "Wed, 16 Sep 2026 13:00:20 GMT"
     },
     {
-      "title": "Sequins, Cher and showgirls: costume designer Bob Mackie – a life in pictures",
-      "link": "https://www.theguardian.com/fashion/costume-and-culture/gallery/2026/sep/14/costume-designer-bob-mackie-a-life-in-pictures",
-      "publishedAt": "Mon, 14 Sep 2026 21:25:31 GMT"
+      "title": "Mossy catwalks, mycelial designs and Monty Don: the growth of gardener style",
+      "link": "https://www.theguardian.com/fashion/2026/sep/11/gardening-fashion-cool-monty-don",
+      "publishedAt": "Fri, 11 Sep 2026 14:07:19 GMT"
     },
     {
-      "title": "Emmys 2026: red carpet looks and outfits at TV’s biggest night – in pictures",
-      "link": "https://www.theguardian.com/tv-and-radio/gallery/2026/sep/15/emmys-2026-red-carpet-fashion-looks-outfits-awards-photos-gallery-pictures",
-      "publishedAt": "Tue, 15 Sep 2026 00:37:19 GMT"
+      "title": "It’s a slam dunk for Tommy Hilfiger as stars turn out for Plaza homecoming",
+      "link": "https://www.theguardian.com/fashion/2026/sep/11/slam-dunk-tommy-hilfiger-plaza-homecoming-fashion-new-york",
+      "publishedAt": "Fri, 11 Sep 2026 14:21:09 GMT"
     },
     {
-      "title": "Ralph Lauren proves the American dream still sells at New York fashion week",
-      "link": "https://www.theguardian.com/fashion/2026/sep/10/ralph-lauren-american-dream-new-york-fashion-week",
-      "publishedAt": "Thu, 10 Sep 2026 12:59:54 GMT"
-    },
-    {
-      "title": "Diana’s ‘revenge dress’, worn when Charles revealed infidelity, up for auction",
-      "link": "https://www.theguardian.com/uk-news/2026/sep/11/diana-revenge-dress-auction-sothebys-stambolian",
-      "publishedAt": "Fri, 11 Sep 2026 05:00:02 GMT"
-    },
-    {
-      "title": "‘I’ve got more of a sense of humour than Ralph Lauren’ – nine things we learned from Paul Smith’s new memoir",
-      "link": "https://www.theguardian.com/fashion/2026/sep/10/paul-smith-the-designer-who-put-personality-into-menswear",
-      "publishedAt": "Thu, 10 Sep 2026 17:00:41 GMT"
+      "title": "Make NHS and military uniforms in UK, fashion firms urge Burnham",
+      "link": "https://www.theguardian.com/business/2026/sep/15/nhs-mod-uniforms-uk-fashion-firms-andy-burnham",
+      "publishedAt": "Tue, 15 Sep 2026 08:10:49 GMT"
     }
   ]
 }
