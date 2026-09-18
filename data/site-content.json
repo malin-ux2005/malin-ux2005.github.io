@@ -89,7 +89,18 @@
       "href": "#catalog",
       "buttonLabel": "",
       "order": 50
+    },
+    {
+      "name": "sss1lv3r",
+      "code": "SR-01",
+      "text": "Винтажный селект из редких и архивных позиций. Интересные формы и необычные позиции.",
+      "filter": "sss1lv3r",
+      "imageUrl": "/catalog-images/132d96a2a3/COL_06.png",
+      "theme": "dark",
+      "href": "#catalog",
+      "buttonLabel": "",
+      "order": 60
     }
   ],
-  "generatedAt": "2026-09-18T13:55:48.283Z"
+  "generatedAt": "2026-09-18T17:02:00.000Z"
 }
