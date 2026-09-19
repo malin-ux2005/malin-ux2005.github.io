@@ -1,16 +1,21 @@
 {
   "source": "The Guardian Fashion",
-  "updatedAt": "2026-09-18T17:09:29.896Z",
+  "updatedAt": "2026-09-19T18:13:41.775Z",
   "items": [
+    {
+      "title": "Hunk – or ‘unc’? What magazine covers of Michael B Jordan and Tom Cruise tell us about manhood",
+      "link": "https://www.theguardian.com/society/2026/sep/19/magazine-covers-michael-b-jordan-tom-cruise-masculinity",
+      "publishedAt": "Sat, 19 Sep 2026 12:00:45 GMT"
+    },
+    {
+      "title": "US fashion CEO resigns after physically restraining animal rights activists",
+      "link": "https://www.theguardian.com/fashion/2026/sep/19/council-of-fashion-designers-of-america-ceo-steven-kolb-resigns-after-physically-restraining-animal-rights-activists",
+      "publishedAt": "Sat, 19 Sep 2026 11:58:01 GMT"
+    },
     {
       "title": "Marks and Spencer’s first LFW catwalk gamble pays off with compelling looks at affordable prices",
       "link": "https://www.theguardian.com/business/2026/sep/18/marks-and-spencer-london-fashion-week-catwalk-show",
       "publishedAt": "Fri, 18 Sep 2026 15:36:36 GMT"
-    },
-    {
-      "title": "Why did a high-profile fashion CEO physically restrain Peta protesters at New York fashion week?",
-      "link": "https://www.theguardian.com/fashion/2026/sep/17/peta-new-york-fashion-week-steven-kolb",
-      "publishedAt": "Fri, 18 Sep 2026 06:00:11 GMT"
     },
     {
       "title": "Rain check: what to wear with an anorak",
@@ -18,19 +23,9 @@
       "publishedAt": "Fri, 18 Sep 2026 05:00:09 GMT"
     },
     {
-      "title": "The definitive guide to men’s shirts: 19 of the best for every occasion",
-      "link": "https://www.theguardian.com/thefilter/2026/sep/18/best-mens-shirts-uk",
-      "publishedAt": "Fri, 18 Sep 2026 14:00:19 GMT"
-    },
-    {
       "title": "Is the tie dead? Fashion connoisseurs hope not as House of Lords relaxes rules",
       "link": "https://www.theguardian.com/politics/2026/sep/18/is-the-tie-dead-fashion-connoisseurs-house-of-lords-relaxes-rules",
       "publishedAt": "Fri, 18 Sep 2026 05:00:08 GMT"
-    },
-    {
-      "title": "Hard parties, cheap rents and horrible flats: how 90s art and fashion redefined British culture",
-      "link": "https://www.theguardian.com/culture/2026/sep/17/art-and-fashion-90s-kate-moss-juergen-teller-sarah-lucas-naomi-campbell-alexander-mcqueen",
-      "publishedAt": "Thu, 17 Sep 2026 07:00:41 GMT"
     },
     {
       "title": "Jess Cartner-Morley on fashion: pair a little skirt with a chunky jumper for the perfect balancing act",
@@ -38,19 +33,24 @@
       "publishedAt": "Wed, 16 Sep 2026 13:00:20 GMT"
     },
     {
+      "title": "Sequins, Cher and showgirls: costume designer Bob Mackie – a life in pictures",
+      "link": "https://www.theguardian.com/fashion/costume-and-culture/gallery/2026/sep/14/costume-designer-bob-mackie-a-life-in-pictures",
+      "publishedAt": "Mon, 14 Sep 2026 21:25:31 GMT"
+    },
+    {
       "title": "Mossy catwalks, mycelial designs and Monty Don: the growth of gardener style",
       "link": "https://www.theguardian.com/fashion/2026/sep/11/gardening-fashion-cool-monty-don",
       "publishedAt": "Fri, 11 Sep 2026 14:07:19 GMT"
     },
     {
-      "title": "It’s a slam dunk for Tommy Hilfiger as stars turn out for Plaza homecoming",
-      "link": "https://www.theguardian.com/fashion/2026/sep/11/slam-dunk-tommy-hilfiger-plaza-homecoming-fashion-new-york",
-      "publishedAt": "Fri, 11 Sep 2026 14:21:09 GMT"
+      "title": "‘I love the boldness of modernism’: New York fashion week goes highbrow",
+      "link": "https://www.theguardian.com/fashion/2026/sep/12/boldness-of-modernism-new-york-fashion-week-goes-highbrow",
+      "publishedAt": "Sat, 12 Sep 2026 12:08:33 GMT"
     },
     {
-      "title": "Make NHS and military uniforms in UK, fashion firms urge Burnham",
-      "link": "https://www.theguardian.com/business/2026/sep/15/nhs-mod-uniforms-uk-fashion-firms-andy-burnham",
-      "publishedAt": "Tue, 15 Sep 2026 08:10:49 GMT"
+      "title": "Diana’s ‘revenge dress’, worn when Charles revealed infidelity, up for auction",
+      "link": "https://www.theguardian.com/uk-news/2026/sep/11/diana-revenge-dress-auction-sothebys-stambolian",
+      "publishedAt": "Fri, 11 Sep 2026 05:00:02 GMT"
     }
   ]
 }
