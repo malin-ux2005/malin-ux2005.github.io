@@ -1,7 +1,12 @@
 {
   "source": "The Guardian Fashion",
-  "updatedAt": "2026-09-23T14:24:20.931Z",
+  "updatedAt": "2026-09-23T21:41:41.984Z",
   "items": [
+    {
+      "title": "Italian pop legend takes the lead in Maria Grazia Chiuri’s Fendi collection",
+      "link": "https://www.theguardian.com/fashion/2026/sep/23/fendi-maria-grazia-chiuri-collection-milan-fashion-week",
+      "publishedAt": "Wed, 23 Sep 2026 17:09:05 GMT"
+    },
     {
       "title": "Jess Cartner-Morley on fashion: in praise of slightly silly clothes",
       "link": "https://www.theguardian.com/fashion/2026/sep/23/jess-cartner-morley-on-fashion-in-praise-of-fun-clothes",
@@ -11,11 +16,6 @@
       "title": "From 50p gold hot pants to Paul Smith suits: how Kylie Minogue became one of pop’s ultimate chameleons",
       "link": "https://www.theguardian.com/fashion/2026/sep/23/how-kylie-minogue-became-pop-chameleon-gold-hot-pants",
       "publishedAt": "Wed, 23 Sep 2026 06:00:18 GMT"
-    },
-    {
-      "title": "Sali Hughes on beauty: if you can’t use retinoids, these proven anti-ageing formulas are the next best thing",
-      "link": "https://www.theguardian.com/fashion/2026/sep/23/sali-hughes-on-beauty-retinoids-proven-anti-ageing-formulas",
-      "publishedAt": "Wed, 23 Sep 2026 09:00:08 GMT"
     },
     {
       "title": "Skirts given star billing as Prada swerves trousers and dresses in Milan",
@@ -48,9 +48,9 @@
       "publishedAt": "Fri, 18 Sep 2026 05:00:08 GMT"
     },
     {
-      "title": "Sequins, Cher and showgirls: costume designer Bob Mackie – a life in pictures",
-      "link": "https://www.theguardian.com/fashion/costume-and-culture/gallery/2026/sep/14/costume-designer-bob-mackie-a-life-in-pictures",
-      "publishedAt": "Mon, 14 Sep 2026 21:25:31 GMT"
+      "title": "Jess Cartner-Morley on fashion: pair a little skirt with a chunky jumper for the perfect balancing act",
+      "link": "https://www.theguardian.com/fashion/2026/sep/16/jess-cartner-morley-on-fashion-pair-skirt-with-chunky-jumper",
+      "publishedAt": "Wed, 16 Sep 2026 13:00:20 GMT"
     }
   ]
 }
