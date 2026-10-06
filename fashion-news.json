@@ -1,6 +1,6 @@
 {
   "source": "The Guardian Fashion",
-  "updatedAt": "2026-10-06T14:34:26.460Z",
+  "updatedAt": "2026-10-06T19:47:38.393Z",
   "items": [
     {
       "title": "Chanel is all about joy as Blazy celebrates year at helm of world’s hottest brand",
@@ -38,6 +38,11 @@
       "publishedAt": "Fri, 02 Oct 2026 14:54:37 GMT"
     },
     {
+      "title": "Jonathan Anderson mixes Austen romance with chic streetware in Dior’s Paris show",
+      "link": "https://www.theguardian.com/fashion/2026/sep/29/jonathan-anderson-mixes-austen-romance-with-chic-streetware-in-diors-paris-show",
+      "publishedAt": "Tue, 29 Sep 2026 15:56:59 GMT"
+    },
+    {
       "title": "From chunky knits to go-anywhere boots: 52 women’s autumn wardrobe updates (some are even free)",
       "link": "https://www.theguardian.com/thefilter/2026/sep/25/womens-autumn-wardrobe-updates-2026",
       "publishedAt": "Fri, 25 Sep 2026 14:00:09 GMT"
@@ -46,11 +51,6 @@
       "title": "Jess Cartner-Morley on fashion: now is the perfect time to flash some lace",
       "link": "https://www.theguardian.com/fashion/2026/sep/30/jess-cartner-morley-fashion-now-perfect-time-lace",
       "publishedAt": "Wed, 30 Sep 2026 14:28:20 GMT"
-    },
-    {
-      "title": "Hard parties, cheap rents and horrible flats: how 90s art and fashion redefined British culture",
-      "link": "https://www.theguardian.com/culture/2026/sep/17/art-and-fashion-90s-kate-moss-juergen-teller-sarah-lucas-naomi-campbell-alexander-mcqueen",
-      "publishedAt": "Thu, 17 Sep 2026 07:00:41 GMT"
     }
   ]
 }
