@@ -1,5 +1,6 @@
 import { createHash } from "node:crypto";
 import { access, mkdir, readFile, writeFile } from "node:fs/promises";
+import { tmpdir } from "node:os";
 import { dirname, join, resolve } from "node:path";
 
 const SHEET_ID = "1C8xVNcmo9b42jLUYL6Bma7KD5FVxYaLWpOO26psYzxM";
@@ -8,6 +9,10 @@ const PUBLIC_DIR = resolve(process.env.PUBLIC_DIR || "public");
 const DATA_DIR = join(PUBLIC_DIR, "data");
 const IMAGE_DIR = join(PUBLIC_DIR, "catalog-images");
 const GENERATED_DIR = process.env.GENERATED_DIR === "false" ? null : resolve(process.env.GENERATED_DIR || "lib/generated");
+// Full-size originals of the photos listed in photo-fixes.json wait here for
+// fix-catalog-photos.py, which straightens them into catalog-images.
+const ORIGINALS_DIR = resolve(process.env.PHOTO_ORIGINALS_DIR || join(tmpdir(), "viwantica-photo-originals"));
+const PHOTO_FIXES = new URL("./photo-fixes.json", import.meta.url);
 const IMAGE_FILE = /\.(?:avif|gif|jpe?g|png|webp)$/i;
 const PUBLIC_DISK_URL = /^https:\/\/(?:disk\.yandex\.[^/]+|yadi\.sk)\//i;
 
@@ -163,7 +168,7 @@ async function listYandexFolder(publicKey) {
   while (offset < total && offset < 5000) {
     endpoint.searchParams.set("offset", String(offset));
     const response = await fetch(endpoint, { headers: { Accept: "application/json" } });
-    if (!response.ok) throw new Error(`Yandex Disk returned ${response.status}`);
+    if (!response.ok) throw new Error(`Yandex Disk returned ${response.status}: ${(await response.text()).slice(0, 200)}`);
     const payload = await response.json();
     const page = payload._embedded?.items || [];
     items.push(...page);
@@ -172,6 +177,19 @@ async function listYandexFolder(publicKey) {
     offset += page.length;
   }
   return items.filter((item) => item.type === "file" && item.name && IMAGE_FILE.test(item.name) && (item.preview || item.file));
+}
+
+async function fetchImage(url, attempts = 3) {
+  for (let attempt = 1; attempt <= attempts; attempt += 1) {
+    try {
+      const response = await fetch(url, { headers: { Accept: "image/jpeg,image/*" } });
+      if (response.ok) return Buffer.from(await response.arrayBuffer());
+    } catch {
+      // Network blip: try again below.
+    }
+    if (attempt < attempts) await new Promise((done) => setTimeout(done, 800 * attempt));
+  }
+  return null;
 }
 
 async function runPool(tasks, concurrency = 10) {
@@ -251,9 +269,21 @@ async function main() {
   const oldManifest = await readJson(join(DATA_DIR, "image-manifest.json"), {});
   const curatedManifest = await readJson(join(DATA_DIR, "curated-cutouts.json"), { paths: [] });
   const curatedPaths = new Set((curatedManifest.paths || []).map((path) => String(path).replace(/^\/+/, "")));
+  // A fix is pinned to the upload it was written for: a re-shot photo with the
+  // same name is mirrored as it is.
+  const photoFixes = await readJson(PHOTO_FIXES, {});
+  const fixFor = (item) => {
+    const fix = photoFixes[item.name];
+    const uploaded = String(item.sha256 || item.md5 || "");
+    return fix?.source && item.file && uploaded.startsWith(fix.source) ? JSON.stringify(fix) : "";
+  };
   const nextMeta = {};
   const manifest = {};
   const downloadTasks = [];
+  // Folders Yandex refused to list this run. Committed with the data (no
+  // timestamp, so it only changes when the answer does), because a failed
+  // listing otherwise just keeps yesterday's photos without a trace.
+  const folderErrors = {};
 
   for (const [publicKey, matchers] of wanted) {
     const hash = folderHash(publicKey);
@@ -264,7 +294,8 @@ async function main() {
     } catch (error) {
       manifest[hash] = oldManifest[hash] || oldManifest[publicKey] || {};
       nextMeta[hash] = oldFolderMeta;
-      console.warn(`Keeping cached images for ${hash}: ${error instanceof Error ? error.message : "Yandex Disk error"}`);
+      folderErrors[hash] = error instanceof Error ? error.message : "Yandex Disk error";
+      console.warn(`Keeping cached images for ${hash}: ${folderErrors[hash]}`);
       continue;
     }
     manifest[hash] = {};
@@ -283,14 +314,30 @@ async function main() {
       const relativePath = `/catalog-images/${hash}/${fileName}`;
       const outputPath = join(IMAGE_DIR, hash, fileName);
       const sourceHash = item.sha256 || item.md5 || item.file || item.preview;
+      const fix = fixFor(item);
+      // "preview": true fixes the mirrored preview instead (camera RAW originals, broken downloads).
+      const fixSource = fix && (photoFixes[item.name].preview ? item.preview || item.file : item.file);
       manifest[hash][item.name] = relativePath;
-      nextMeta[hash][item.name] = { sourceHash, path: relativePath };
-      if (oldFolderMeta[item.name]?.sourceHash === sourceHash && await exists(outputPath)) continue;
+      nextMeta[hash][item.name] = { sourceHash, path: relativePath, ...(fix ? { fix } : {}) };
+      const old = oldFolderMeta[item.name];
+      if (old?.sourceHash === sourceHash && (old.fix || "") === fix && await exists(outputPath)) continue;
+      const folderMeta = nextMeta[hash];
       downloadTasks.push(async () => {
-        const response = await fetch(item.preview || item.file, { headers: { Accept: "image/jpeg,image/*" } });
-        if (!response.ok) throw new Error(`Image ${item.name} returned ${response.status}`);
+        if (fix) {
+          const original = await fetchImage(fixSource);
+          if (original) {
+            await mkdir(join(ORIGINALS_DIR, hash), { recursive: true });
+            await writeFile(join(ORIGINALS_DIR, hash, fileName), original);
+            return;
+          }
+          // The downloader hiccups now and then: mirror the preview and retry the fix next run.
+          delete folderMeta[item.name].fix;
+          if (old?.sourceHash === sourceHash && await exists(outputPath)) return;
+        }
+        const preview = await fetchImage(item.preview || item.file);
+        if (!preview) throw new Error(`Image ${item.name} could not be downloaded`);
         await mkdir(dirname(outputPath), { recursive: true });
-        await writeFile(outputPath, Buffer.from(await response.arrayBuffer()));
+        await writeFile(outputPath, preview);
       });
     }
   }
@@ -346,6 +393,7 @@ async function main() {
     writeJson(join(DATA_DIR, "image-manifest.json"), manifest),
     writeJson(metaPath, nextMeta),
     writeJson(ratesPath, currencyRates),
+    writeJson(join(DATA_DIR, "sync-status.json"), { photoFolderErrors: folderErrors }),
   ];
   if (GENERATED_DIR) {
     writes.push(

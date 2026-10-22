@@ -39,13 +39,19 @@ jobs:
           GENERATED_DIR: "false"
       - name: Build stable Karambaby cutouts
         run: python scripts/build-karambaby-cutouts.py --public-dir .
+      - name: Straighten sideways and tiny product photos
+        run: python scripts/fix-catalog-photos.py --public-dir .
+      - name: Measure photo backdrops for seamless product tiles
+        run: python scripts/build-image-tones.py --public-dir .
+      - name: Build light card previews
+        run: python scripts/build-thumbs.py --public-dir .
       - name: Refresh fashion headlines
         run: node scripts/update-fashion-news.mjs fashion-news.json
       - name: Publish refreshed content
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data catalog-images catalog-cutouts fashion-news.json
+          git add data catalog-images catalog-cutouts catalog-thumbs fashion-news.json
           git diff --cached --quiet || git commit -m "Refresh store content"
           git push
       - uses: actions/configure-pages@v5
