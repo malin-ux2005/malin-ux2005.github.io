@@ -4,6 +4,16 @@
     <meta charset="UTF-8" />
     <!-- viewport-fit=cover lets the black header run under the iPhone notch / Dynamic Island. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <script>
+      // iPhone/iPad zoom into any field typed below 16px (the sort list) and never zoom back,
+      // so the product card then opened half off-screen. maximum-scale stops that automatic
+      // zoom; iOS still lets people pinch-zoom. Other platforms keep the plain viewport.
+      (function () {
+        var ua = navigator.userAgent;
+        var ios = /iPhone|iPad|iPod/.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+        if (ios) document.querySelector('meta[name="viewport"]').setAttribute("content", "width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover");
+      })();
+    </script>
     <meta name="referrer" content="no-referrer" />
     <meta name="description" content="Viwantica — личный архив и винтажные вещи. Каталог редких позиций с покупкой через Telegram." />
     <meta name="theme-color" content="#0b0b0b" />
@@ -29,8 +39,8 @@
       html{background:#0b0b0b}
       .boot-screen{min-height:100vh;min-height:100dvh;display:grid;place-items:center;background:#fff;color:#0b0b0b;font:900 clamp(56px,14vw,120px)/1 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;letter-spacing:-.07em}
     </style>
-    <script type="module" crossorigin src="/assets/index-BMS7JTN-.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-5Ljm4EqJ.css">
+    <script type="module" crossorigin src="/assets/index-C8Bc41A4.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DM87LCXT.css">
   </head>
   <body>
     <div id="root"><div class="boot-screen">viwántica</div></div>
