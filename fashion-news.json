@@ -1,7 +1,17 @@
 {
   "source": "The Guardian Fashion",
-  "updatedAt": "2026-10-30T09:10:40.736Z",
+  "updatedAt": "2026-10-30T15:55:30.917Z",
   "items": [
+    {
+      "title": "Dripping with style: what fashion insiders wear in the rain – plus we pick the best raincoats and accessories",
+      "link": "https://www.theguardian.com/fashion/2026/oct/30/fashion-autumn-rain-best-raincoats-accessories",
+      "publishedAt": "Fri, 30 Oct 2026 15:00:16 GMT"
+    },
+    {
+      "title": "Basketweavers get in a twist over Alexander Skarsgård’s Wicker Husband",
+      "link": "https://www.theguardian.com/film/2026/oct/30/basketweavers-get-in-a-twist-over-alexander-skarsgard-wicker-husband",
+      "publishedAt": "Fri, 30 Oct 2026 12:24:19 GMT"
+    },
     {
       "title": "DIY socks, messy collars and cummerbunds: nine wardrobe updates from the catwalks",
       "link": "https://www.theguardian.com/fashion/2026/oct/29/diy-socks-messy-collars-and-cummberbunds-nine-wardrobe-updates-from-the-catwalks",
@@ -33,24 +43,14 @@
       "publishedAt": "Fri, 23 Oct 2026 06:00:01 GMT"
     },
     {
-      "title": "‘I wanted to create the female version of a man’s suit’: how Roland Mouret’s Galaxy dress took over the world",
-      "link": "https://www.theguardian.com/fashion/2026/oct/22/i-wanted-to-create-the-female-version-of-a-mans-suit-how-roland-mourets-galaxy-dress-took-over-the-world",
-      "publishedAt": "Thu, 22 Oct 2026 06:00:08 GMT"
-    },
-    {
-      "title": "‘Our town is making jeans again’: meet the firm reviving jobs and skills in Wales",
-      "link": "https://www.theguardian.com/business/2026/oct/10/hiut-denim-jeans-cardigan-wales-manufacturing",
-      "publishedAt": "Sat, 10 Oct 2026 11:00:55 GMT"
-    },
-    {
       "title": "‘It’s not about sex but empowerment’: why I picked a ‘naked’ frock as dress of the year",
       "link": "https://www.theguardian.com/culture/2026/oct/08/why-i-picked-a-naked-frock-as-dress-of-the-year-fashion-musuem-bath",
       "publishedAt": "Thu, 08 Oct 2026 11:34:54 GMT"
     },
     {
-      "title": "Jess Cartner-Morley on fashion: this season’s vibe is lady who lounges - not lunches",
-      "link": "https://www.theguardian.com/fashion/2026/oct/14/jess-cartner-morley-fashion-lady-who-lounges-not-lunches",
-      "publishedAt": "Wed, 14 Oct 2026 13:00:03 GMT"
+      "title": "‘Our town is making jeans again’: meet the firm reviving jobs and skills in Wales",
+      "link": "https://www.theguardian.com/business/2026/oct/10/hiut-denim-jeans-cardigan-wales-manufacturing",
+      "publishedAt": "Sat, 10 Oct 2026 11:00:55 GMT"
     }
   ]
 }
