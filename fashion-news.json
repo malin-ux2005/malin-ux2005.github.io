@@ -1,7 +1,12 @@
 {
   "source": "The Guardian Fashion",
-  "updatedAt": "2026-11-06T21:58:21.082Z",
+  "updatedAt": "2026-11-07T14:23:46.706Z",
   "items": [
+    {
+      "title": "‘Minimal look, maximal politics’: why the black T-shirt signals modern power",
+      "link": "https://www.theguardian.com/fashion/2026/nov/06/minimal-look-maximal-politics-how-the-black-t-shirt-became-a-political-weapon",
+      "publishedAt": "Sat, 07 Nov 2026 09:51:10 GMT"
+    },
     {
       "title": "Prince, the pope, and autumn 2026: purple is hot this season",
       "link": "https://www.theguardian.com/fashion/2026/nov/06/prince-pope-autumn-2026-purple-hot-this-season",
@@ -33,9 +38,9 @@
       "publishedAt": "Tue, 03 Nov 2026 15:00:20 GMT"
     },
     {
-      "title": "‘A true icon of the hair industry’: celebrity hairstylist John Frieda dies aged 75",
-      "link": "https://www.theguardian.com/lifeandstyle/2026/nov/04/celebrity-hairstylist-john-frieda-dies-aged-75",
-      "publishedAt": "Wed, 04 Nov 2026 09:59:08 GMT"
+      "title": "Jess Cartner-Morley’s November style essentials: fancy flats, sexy knits and a Christmassy pigeon",
+      "link": "https://www.theguardian.com/thefilter/2026/nov/01/jess-cartner-morleys-november-style-essentials-2026",
+      "publishedAt": "Sun, 01 Nov 2026 13:00:12 GMT"
     },
     {
       "title": "Dripping with style: what fashion insiders wear in the rain – plus we pick the best raincoats and accessories",
@@ -46,11 +51,6 @@
       "title": "Basketweavers get in a twist over Alexander Skarsgård’s Wicker Husband",
       "link": "https://www.theguardian.com/film/2026/oct/30/basketweavers-get-in-a-twist-over-alexander-skarsgard-wicker-husband",
       "publishedAt": "Fri, 30 Oct 2026 12:24:19 GMT"
-    },
-    {
-      "title": "A-listers and AI stylists: how high-street brands are staging a fashion comeback",
-      "link": "https://www.theguardian.com/fashion/2026/oct/31/a-listers-ai-stylists-high-street-brands-fashion-comeback",
-      "publishedAt": "Sat, 31 Oct 2026 16:00:47 GMT"
     }
   ]
 }
