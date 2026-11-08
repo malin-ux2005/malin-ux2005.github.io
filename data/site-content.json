@@ -89,7 +89,40 @@
       "href": "#catalog",
       "buttonLabel": "",
       "order": 50
+    },
+    {
+      "name": "alxximka",
+      "code": "AL-01",
+      "text": "Коллекция alxximka.",
+      "filter": "alxximka",
+      "imageUrl": "/catalog-images/132d96a2a3/COL_07.jpg",
+      "theme": "light",
+      "href": "#catalog",
+      "buttonLabel": "Смотреть коллекцию",
+      "order": 70
+    },
+    {
+      "name": "ddivannn",
+      "code": "DI-01",
+      "text": "Коллекция ddivannn.",
+      "filter": "ddivannn",
+      "imageUrl": "/catalog-images/132d96a2a3/COL_08.jpg",
+      "theme": "light",
+      "href": "#catalog",
+      "buttonLabel": "Смотреть коллекцию",
+      "order": 80
+    },
+    {
+      "name": "KHUDEZY",
+      "code": "KH-01",
+      "text": "Коллекция KHUDEZY.",
+      "filter": "KHUDEZY",
+      "imageUrl": "/catalog-images/132d96a2a3/COL_09.jpg",
+      "theme": "dark",
+      "href": "#catalog",
+      "buttonLabel": "Смотреть коллекцию",
+      "order": 90
     }
   ],
-  "generatedAt": "2026-11-08T14:56:13.310Z"
+  "generatedAt": "2026-11-08T19:18:24.904Z"
 }

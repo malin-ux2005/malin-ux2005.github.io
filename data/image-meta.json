@@ -4240,6 +4240,18 @@
     "COL_06.png": {
       "sourceHash": "3a17092086d46ceb3a44fee28e77e3dbcc2f3cec4fcd00041665246b96be95d3",
       "path": "/catalog-images/132d96a2a3/COL_06.png"
+    },
+    "COL_07.jpg": {
+      "sourceHash": "4eeddaffd7898cfeca56864dc13a4321952309609e225e565ab7d8738abdc37d",
+      "path": "/catalog-images/132d96a2a3/COL_07.jpg"
+    },
+    "COL_08.jpg": {
+      "sourceHash": "e70f944ff2cdcd4b754d8b7a76b63646764e4fd443ea63e5aa087aed3df6da24",
+      "path": "/catalog-images/132d96a2a3/COL_08.jpg"
+    },
+    "COL_09.jpg": {
+      "sourceHash": "9ea8a03f54f43c64424795222d7526d54c1917a4e4d98f247cf956a65e184adb",
+      "path": "/catalog-images/132d96a2a3/COL_09.jpg"
     }
   }
 }
