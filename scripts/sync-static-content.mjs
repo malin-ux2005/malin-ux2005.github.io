@@ -110,7 +110,7 @@ function publicCatalogTable(table) {
     "Размер для фильтра", "Цвет", "Цена, ₽", "Состояние", "Материал", "Сезон", "Замеры",
     "Описание для сайта", "Папка фото — Я.Диск", "Префикс фото", "Главное фото — имя файла",
     "Дата добавления", "Порядок на сайте", "Пол", "Гендер", "Для кого", "Мужское / Женское",
-    "Мужское/женское",
+    "Мужское/женское", "Превью — ссылка (робот)",
   ]);
   const indexes = table.headers
     .map((header, index) => ({ header, index }))
@@ -235,7 +235,7 @@ async function main() {
     // Read the unfiltered mirror instead of the editor-facing catalog. Google
     // Visualization respects an active basic filter, which used to make the
     // public site lose most products whenever somebody filtered the table.
-    fetchSheet({ sheet: CATALOG_SHEET, range: "A1:AH1000" }),
+    fetchSheet({ sheet: CATALOG_SHEET, range: "A1:Z5000" }),
     fetchSheet({ sheet: "Сайт — Баннеры — ПК", range: "A1:K200" }),
     fetchSheet({ sheet: "Сайт — Коллекции", range: "A1:K200" }),
   ]);
