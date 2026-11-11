@@ -182,6 +182,10 @@ def main() -> None:
             old = old_cutout_meta.get(folder, {}).get(original_name, {})
             target_key = target_relative.as_posix()
             is_curated = target_key in curated_paths or old.get("curated") is True
+            if is_curated and not folder_meta.get(original_name, {}).get("curated"):
+                # A replacement in _REVIEW is already a ready photo. Keep the
+                # new photo in the manifest and the old approved cutout on disk.
+                continue
             if is_curated and not target.exists():
                 raise FileNotFoundError(f"Curated Karambaby cutout is missing: {target_key}")
             if target.exists() and is_curated:

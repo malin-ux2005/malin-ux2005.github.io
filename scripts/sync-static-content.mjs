@@ -5,6 +5,7 @@ import { dirname, join, resolve } from "node:path";
 
 const SHEET_ID = "1C8xVNcmo9b42jLUYL6Bma7KD5FVxYaLWpOO26psYzxM";
 const CATALOG_SHEET = "Сайт — Каталог";
+const REVIEW_FOLDER_URL = "https://disk.yandex.ru/d/Q3I_mhpAxJMSHw";
 const PUBLIC_DIR = resolve(process.env.PUBLIC_DIR || "public");
 const DATA_DIR = join(PUBLIC_DIR, "data");
 const IMAGE_DIR = join(PUBLIC_DIR, "catalog-images");
@@ -249,13 +250,19 @@ async function main() {
     wanted.set(publicKey, list);
   };
 
+  const reviewPrefixes = new Set();
   for (const { cell } of rowReader(uniqueCatalog)) {
     const folder = cell("Папка фото — Я.Диск");
     const prefix = cell("Префикс фото");
     const mainPhoto = cell("Главное фото — имя файла");
+    const id = /^№?\s*(\d{6})$/.exec(cell("ID вещи"))?.[1];
+    if (id) reviewPrefixes.add(id);
     if (prefix) remember(folder, (name) => name.startsWith(`${prefix}_`));
     else if (mainPhoto) remember(folder, (name) => name === mainPhoto);
   }
+  // Edited photos go in _REVIEW under the catalog ID, even when the row
+  // still records a different folder for the camera originals.
+  remember(REVIEW_FOLDER_URL, (name) => reviewPrefixes.has(/^(\d{6})_\d+\./.exec(name)?.[1]));
   for (const table of [bannerTable, collectionTable]) {
     for (const { cell } of rowReader(table)) {
       const folder = cell("Фото — URL / папка Я.Диск");
@@ -284,6 +291,7 @@ async function main() {
   // timestamp, so it only changes when the answer does), because a failed
   // listing otherwise just keeps yesterday's photos without a trace.
   const folderErrors = {};
+  const photoDownloadErrors = {};
 
   for (const [publicKey, matchers] of wanted) {
     const hash = folderHash(publicKey);
@@ -302,24 +310,24 @@ async function main() {
     nextMeta[hash] = {};
     for (const item of items) {
       const fileName = safeImageName(item.name);
+      const sourceHash = item.sha256 || item.md5 || item.file || item.preview;
+      const old = oldFolderMeta[item.name];
       const curatedRelative = `catalog-cutouts/${hash}/${fileName.replace(/\.[^.]+$/, "")}.png`;
       const curatedOutput = join(PUBLIC_DIR, curatedRelative);
-      if (curatedPaths.has(curatedRelative) && await exists(curatedOutput)) {
+      const useCurated = !old || (old.curated && old.sourceHash === sourceHash);
+      if (useCurated && curatedPaths.has(curatedRelative) && await exists(curatedOutput)) {
         const relativePath = `/${curatedRelative}`;
-        const sourceHash = item.sha256 || item.md5 || item.file || item.preview;
         manifest[hash][item.name] = relativePath;
         nextMeta[hash][item.name] = { sourceHash, path: relativePath, curated: true };
         continue;
       }
       const relativePath = `/catalog-images/${hash}/${fileName}`;
       const outputPath = join(IMAGE_DIR, hash, fileName);
-      const sourceHash = item.sha256 || item.md5 || item.file || item.preview;
       const fix = fixFor(item);
       // "preview": true fixes the mirrored preview instead (camera RAW originals, broken downloads).
       const fixSource = fix && (photoFixes[item.name].preview ? item.preview || item.file : item.file);
       manifest[hash][item.name] = relativePath;
       nextMeta[hash][item.name] = { sourceHash, path: relativePath, ...(fix ? { fix } : {}) };
-      const old = oldFolderMeta[item.name];
       if (old?.sourceHash === sourceHash && (old.fix || "") === fix && await exists(outputPath)) continue;
       const folderMeta = nextMeta[hash];
       downloadTasks.push(async () => {
@@ -334,8 +342,20 @@ async function main() {
           delete folderMeta[item.name].fix;
           if (old?.sourceHash === sourceHash && await exists(outputPath)) return;
         }
-        const preview = await fetchImage(item.preview || item.file);
-        if (!preview) throw new Error(`Image ${item.name} could not be downloaded`);
+        const preview = await fetchImage(item.preview || item.file)
+          || (item.preview && item.file && await fetchImage(item.file));
+        if (!preview) {
+          (photoDownloadErrors[hash] ??= []).push(item.name);
+          const oldPath = old?.path;
+          if (oldPath && await exists(join(PUBLIC_DIR, oldPath.replace(/^\/+/, "")))) {
+            manifest[hash][item.name] = oldPath;
+            folderMeta[item.name] = old;
+          } else {
+            delete manifest[hash][item.name];
+            delete folderMeta[item.name];
+          }
+          return;
+        }
         await mkdir(dirname(outputPath), { recursive: true });
         await writeFile(outputPath, preview);
       });
@@ -393,7 +413,7 @@ async function main() {
     writeJson(join(DATA_DIR, "image-manifest.json"), manifest),
     writeJson(metaPath, nextMeta),
     writeJson(ratesPath, currencyRates),
-    writeJson(join(DATA_DIR, "sync-status.json"), { photoFolderErrors: folderErrors }),
+    writeJson(join(DATA_DIR, "sync-status.json"), { photoFolderErrors: folderErrors, photoDownloadErrors }),
   ];
   if (GENERATED_DIR) {
     writes.push(
