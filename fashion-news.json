@@ -1,7 +1,12 @@
 {
   "source": "The Guardian Fashion",
-  "updatedAt": "2026-11-13T08:30:00.256Z",
+  "updatedAt": "2026-11-13T16:41:35.521Z",
   "items": [
+    {
+      "title": "Marlon Brando cool to Jensen Huang joke: how the black leather jacket became a meme",
+      "link": "https://www.theguardian.com/technology/2026/nov/13/marlon-brando-cool-jensen-huang-joke-black-leather-jacket-nvidia",
+      "publishedAt": "Fri, 13 Nov 2026 14:17:09 GMT"
+    },
     {
       "title": "Jess Cartner-Morley on fashion: this season’s big idea? Wear a skirt. It’s that simple",
       "link": "https://www.theguardian.com/fashion/2026/nov/11/jess-cartner-morley-on-fashion-fashions-big-idea-this-season-wear-a-skirt",
@@ -33,9 +38,9 @@
       "publishedAt": "Mon, 09 Nov 2026 05:01:00 GMT"
     },
     {
-      "title": "‘Minimal look, maximal politics’: why the black T-shirt signals modern power",
-      "link": "https://www.theguardian.com/fashion/2026/nov/06/minimal-look-maximal-politics-how-the-black-t-shirt-became-a-political-weapon",
-      "publishedAt": "Sat, 07 Nov 2026 09:51:10 GMT"
+      "title": "Martine Rose appointed creative director at Balenciaga",
+      "link": "https://www.theguardian.com/fashion/2026/nov/06/martine-rose-appointed-creative-director-balenciaga-fashion-house",
+      "publishedAt": "Fri, 06 Nov 2026 16:45:55 GMT"
     },
     {
       "title": "Jess Cartner-Morley on fashion: to nail this year’s British heritage look, just study Rivals",
@@ -46,11 +51,6 @@
       "title": "Faux fur, funnel necks and timeless wool: the 47 best women’s coats for autumn and winter",
       "link": "https://www.theguardian.com/thefilter/2026/nov/03/best-womens-coats-autumn-winter-2026-uk",
       "publishedAt": "Tue, 03 Nov 2026 15:00:20 GMT"
-    },
-    {
-      "title": "Fashion and tradition: how John Smedley is innovating in a tough market",
-      "link": "https://www.theguardian.com/business/2026/nov/01/john-smedley-knitwear-brand-innovating-fashion-tradition-tough-market-manufacturing",
-      "publishedAt": "Sun, 01 Nov 2026 12:00:11 GMT"
     }
   ]
 }
