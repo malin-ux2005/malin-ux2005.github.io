@@ -1,7 +1,17 @@
 {
   "source": "The Guardian Fashion",
-  "updatedAt": "2026-11-20T12:43:37.533Z",
+  "updatedAt": "2026-11-20T20:45:08.978Z",
   "items": [
+    {
+      "title": "A textural moment: why the fashion world is falling in love with opera coats",
+      "link": "https://www.theguardian.com/fashion/2026/nov/20/fashion-world-singing-opera-coats-trend",
+      "publishedAt": "Fri, 20 Nov 2026 17:16:48 GMT"
+    },
+    {
+      "title": "Suki Waterhouse and Robert Pattinson to become Britain’s next big Hollywood power couple",
+      "link": "https://www.theguardian.com/film/2026/nov/20/suki-waterhouse-robert-pattinson-britain-hollywood-power-couple",
+      "publishedAt": "Fri, 20 Nov 2026 16:00:33 GMT"
+    },
     {
       "title": "In a flap: how the butterfly became a symbol of gen Z resilience – and anxiety",
       "link": "https://www.theguardian.com/fashion/2026/nov/19/beautiful-insects-how-the-butterfly-became-a-symbol-of-gen-z-girlhood-defiance-and-anxiety",
@@ -18,11 +28,6 @@
       "publishedAt": "Wed, 18 Nov 2026 07:00:34 GMT"
     },
     {
-      "title": "361 best Christmas gifts for 2026 – tried, tested and loved by the Filter UK",
-      "link": "https://www.theguardian.com/thefilter/2026/nov/14/best-christmas-gifts-ideas-filter-uk-2026",
-      "publishedAt": "Thu, 19 Nov 2026 17:28:29 GMT"
-    },
-    {
       "title": "Branding it like Beckham: how Jude Bellingham is future-proofing his fame",
       "link": "https://www.theguardian.com/football/2026/nov/13/jude-bellingham-branding-it-like-beckham",
       "publishedAt": "Fri, 13 Nov 2026 16:03:19 GMT"
@@ -31,11 +36,6 @@
       "title": "Jess Cartner-Morley on fashion: this season’s big idea? Wear a skirt. It’s that simple",
       "link": "https://www.theguardian.com/fashion/2026/nov/11/jess-cartner-morley-on-fashion-fashions-big-idea-this-season-wear-a-skirt",
       "publishedAt": "Wed, 11 Nov 2026 14:00:52 GMT"
-    },
-    {
-      "title": "‘Pretty weird’: How a viral video shows a striking discrepancy in men and women’s knitwear",
-      "link": "https://www.theguardian.com/fashion/2026/nov/12/wool-pricing-natural-fibre-menswear-knitwear-women",
-      "publishedAt": "Fri, 13 Nov 2026 07:00:12 GMT"
     },
     {
       "title": "Martine Rose appointed creative director at Balenciaga",
@@ -48,9 +48,9 @@
       "publishedAt": "Wed, 28 Oct 2026 07:00:04 GMT"
     },
     {
-      "title": "Faux fur, funnel necks and timeless wool: the 47 best women’s coats for autumn and winter",
-      "link": "https://www.theguardian.com/thefilter/2026/nov/03/best-womens-coats-autumn-winter-2026-uk",
-      "publishedAt": "Tue, 03 Nov 2026 15:00:20 GMT"
+      "title": "From the overblown to the ordinary? Met Gala 2027 to celebrate ‘poetics of everyday’",
+      "link": "https://www.theguardian.com/fashion/2026/nov/08/met-gala-2027-theme-poetics-everyday",
+      "publishedAt": "Sun, 08 Nov 2026 08:00:36 GMT"
     }
   ]
 }
