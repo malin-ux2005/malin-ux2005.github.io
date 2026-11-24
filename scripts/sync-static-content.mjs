@@ -1,3 +1,4 @@
+import { storefrontTable } from "../assets/catalog-fields-20261124.mjs";
 import { createHash } from "node:crypto";
 import { access, mkdir, readFile, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
@@ -384,7 +385,7 @@ async function main() {
   const generatedAt = new Date().toISOString();
   const ratesPath = join(DATA_DIR, "currency-rates.json");
   const currencyRates = await fetchCurrencyRates(await readJson(ratesPath, null));
-  const catalogSnapshot = { ...publicCatalogTable(uniqueCatalog), generatedAt };
+  const catalogSnapshot = { ...storefrontTable(publicCatalogTable(uniqueCatalog)), generatedAt };
   const siteContentSnapshot = { banners, collections, generatedAt };
   const newsSnapshot = await readJson(join(PUBLIC_DIR, "fashion-news.json"), { items: [] });
   const writes = [
